@@ -88,7 +88,7 @@ function getAllGenres(): Genre[] {
 // GetAlbumsByGenre method which takes in genre name & returns array of mocked Album models
 function getAlbumsByGenre(genreName: string) {
     // Return array filtered on genre name
-    return albums.filter(album => album.genre?.name === genreName);
+    return albums.filter(album => album.genre?.name.toLowerCase() === genreName.toLowerCase());
 }
 
 // GetAlbumById method which takes in album id & returns mocked Album model
