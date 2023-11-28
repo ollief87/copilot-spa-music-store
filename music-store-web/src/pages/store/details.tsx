@@ -1,6 +1,7 @@
 import { Album } from "@/models/album";
 import { GetServerSideProps } from "next";
 import Link from "next/link";
+import Image from 'next/image'
 
 type StoreDetailsProps = {
     album: Album;
@@ -12,8 +13,7 @@ export default function StoreDetails({ album }: StoreDetailsProps) {
             <div className="w-full max-w-md mx-auto mb-5">
                 <h2 className="text-2xl font-bold mb-5">Album: {album.title}</h2>
                 <p>
-                    {/*eslint-disable-next-line @next/next/no-img-element*/}
-                    <img src={album.albumArtUrl} alt={album.title} className="w-full shadow-lg rounded-lg" />
+                    <Image src={album.albumArtUrl} alt={album.title} width={350} height={150} className="w-full shadow-lg rounded-lg" />
                 </p>
                 <dl className="mt-5 space-y-2">
                     <div>
