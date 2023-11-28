@@ -1,11 +1,11 @@
 import express from 'express';
-import homeRoutes from './routes/home.routes';
-import storeRoutes from './routes/store.routes';
+import homeRoutes from './routes/homeRoutes';
+import storeRoutes from './routes/storeRoutes';
 
 const app = express();
 
-app.use("/api", homeRoutes);
-app.use("/api/store", storeRoutes);
+app.use("/", homeRoutes);
+app.use("/api", storeRoutes);
 
 app.listen(3001, () => {
     console.log('Server is running on port 3001');

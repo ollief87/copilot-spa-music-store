@@ -25,7 +25,7 @@ export default function StoreIndex({ genres }: StoreIndexProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const res = await fetch('http://localhost:3001/api/store');
+    const res = await fetch('http://localhost:3001/api/genres');
     const genres = await res.json() as Genre[];
     return {
         props: { 
