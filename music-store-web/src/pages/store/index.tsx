@@ -25,7 +25,7 @@ export default function StoreIndex({ genres }: StoreIndexProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const res = await fetch('http://localhost:3001/api/genres');
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/genres`);
     const genres = await res.json() as Genre[];
     return {
         props: { 

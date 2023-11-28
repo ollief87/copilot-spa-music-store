@@ -28,13 +28,13 @@ export default function StoreBrowse({ genre, albums }: StoreBrowseProps) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const genre = context.query.genre; 
-    const res = await fetch(`http://localhost:3001/api/genres/${genre}/albums`); 
-    const data = await res.json() as Album[];
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/genres/${genre}/albums`); 
+    const albums = await res.json() as Album[];
 
     return {
         props: { 
             genre,
-            albums: data
+            albums
         },
     };
 };

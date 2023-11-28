@@ -28,7 +28,7 @@ export default function StoreDetails({ album }: StoreDetailsProps) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const id = context.query.id; 
-    const res = await fetch(`http://localhost:3001/api/albums/${id}`); 
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/albums/${id}`); 
     const album = await res.json() as Album;
 
     return {
